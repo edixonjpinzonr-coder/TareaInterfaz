@@ -154,14 +154,16 @@ public class CentroImpresion {
             System.out.println("No hay ninguna impresora conectada");
     }
 
-    public void desconectarImpresora(int indice) {
-        if (indice < 0 || indice >= listaImpresiones.size()) {
-            System.out.println("valor invalido, solo hay " + listaImpresiones.size() +
-                    "impresoras. seleccione un numero del 0 al " + (listaImpresiones.size() - 1));
-        } else {
-            Impresion impresion = listaImpresiones.get(indice);
-            impresion.desconectar();
-            System.out.println("Impresora desconectada");
-        }
+    public void desconectarImpresora() {
+        boolean resultado= false;
+       for(Impresion aux: listaImpresiones){
+           if (aux.observarEstado()!= EstadoImpresora.EN_MANTENIMINETO &&
+                   aux.observarEstado()!=EstadoImpresora.APAGADA) {
+               aux.desconectar();
+               System.out.println("Impresora desconectada");
+               resultado= true;
+               break;
+           }
+       }
     }
 }
