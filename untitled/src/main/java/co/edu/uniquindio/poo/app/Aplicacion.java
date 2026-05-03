@@ -2,6 +2,8 @@ package co.edu.uniquindio.poo.app;
 
 import co.edu.uniquindio.poo.model.*;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Aplicacion {
@@ -92,7 +94,12 @@ public class Aplicacion {
     public static void mandarInformacionAImprimir(){
         System.out.println("ingrese lo que desea imprimir: ");
         String texto= scanner.nextLine();
-        centroImpresion.mandarAImprimir(texto);
+        centroImpresion.agregarCola(texto);
+        System.out.println("Documento enviado a la cola");
+
+        System.out.print("¿Desea imprimir el siguiente documento en la fila ahora? (s/n): ");
+        String respuesta = scanner.nextLine();
+        
     }
 
     public static void desconectarImpresora(){

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CentroImpresion {
     private String ubicacion;
@@ -166,4 +168,27 @@ public class CentroImpresion {
            }
        }
     }
+    private Queue<String> colaImprecion= new LinkedList<>();
+    public  void agregarCola(String texto){
+        colaImprecion.add(texto);
+        System.out.println("documento agregado a cola, en la posicion "+ colaImprecion.size());
+
+    }
+    public void mostrarCola() {
+        if (colaImprecion.isEmpty()) {
+            System.out.println("No hay documentos para imprimir");
+            return;
+        }
+        for (Impresion aux : listaImpresiones) {
+            if (aux.observarEstado() == EstadoImpresora.ENCENDIDA) {
+                String documento = colaImprecion.poll();
+                System.out.println(aux.imprimir(documento));
+                return;
+            }
+        }
+        System.out.println("ERROR");
+    }
+
+
+
 }
