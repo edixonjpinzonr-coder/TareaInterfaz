@@ -1,21 +1,22 @@
 package co.edu.uniquindio.poo.model;
 
-public class ImpresoraLaser implements Impresion{
+public class Impresora3D implements Impresion{
 
-    private int paginasMinuto;
+    private double tamañoImpresion;
     private EstadoImpresora estadoImpresora;
 
-    public ImpresoraLaser(int paginasMinuto) {
-        this.paginasMinuto = paginasMinuto;
-        this.estadoImpresora= EstadoImpresora.APAGADA;
+    public Impresora3D(double tamañoImpresion) {
+        this.tamañoImpresion = tamañoImpresion;
+        this.estadoImpresora = EstadoImpresora.APAGADA;
     }
 
-    public int getPaginasMinuto() {
-        return paginasMinuto;
+
+    public double getTamañoImpresion() {
+        return tamañoImpresion;
     }
 
-    public void setPaginasMinuto(int paginasMinuto) {
-        this.paginasMinuto = paginasMinuto;
+    public void setTamañoImpresion(double tamañoImpresion) {
+        this.tamañoImpresion = tamañoImpresion;
     }
 
     public EstadoImpresora getEstadoImpresora() {
@@ -28,9 +29,9 @@ public class ImpresoraLaser implements Impresion{
 
     @Override
     public String toString() {
-        return "ImpresoraLaser{" +
-                "paginasMinuto=" + paginasMinuto +
-                ", estadoImpresora=" + estadoImpresora + '\'' +
+        return "Impresora3D{" +
+                "tamañoImpresion=" + tamañoImpresion +
+                ", estadoImpresora=" + estadoImpresora +
                 '}';
     }
 
@@ -59,4 +60,5 @@ public class ImpresoraLaser implements Impresion{
     public EstadoImpresora observarEstado(){
         return  this.estadoImpresora;
     }
+
 }

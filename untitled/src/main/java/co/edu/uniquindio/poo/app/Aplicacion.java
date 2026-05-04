@@ -110,7 +110,8 @@ public class Aplicacion {
         System.out.println("Registrar Impresora"+ "\n"+
                 "¿Que impresora desea registrar?"+"\n"+
                 "1. Impresora de Cartucho"+"\n"+
-                "2. Impresora a Laser"); //para agregar una nueva toca agregar la opcion aqui
+                "2. Impresora a Laser"+ "\n"+
+                "3. Impresora 3D");//para agregar una nueva toca agregar la opcion aqui
 
 
         int opcion= scanner.nextInt();
@@ -128,6 +129,12 @@ public class Aplicacion {
                 System.out.println("ingrese el numero de paginas por minuto");
                 int paginas= scanner.nextInt();
                 nuevaImpresora= new ImpresoraLaser(paginas);
+                break;
+
+            case 3:
+                System.out.println("ingrese el tamañadp de la impresion (CM)");
+                double tamañoImpresion= scanner.nextDouble();
+                nuevaImpresora = new Impresora3D(tamañoImpresion);
                 break;
 
             default:
