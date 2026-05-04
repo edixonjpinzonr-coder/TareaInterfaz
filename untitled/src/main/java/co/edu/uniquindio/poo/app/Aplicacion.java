@@ -99,7 +99,7 @@ public class Aplicacion {
 
         System.out.print("¿Desea imprimir el siguiente documento en la fila ahora? (s/n): ");
         String respuesta = scanner.nextLine();
-        
+
     }
 
     public static void desconectarImpresora(){
